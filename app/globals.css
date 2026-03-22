@@ -1,26 +1,49 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --bg: #ffffff;
+  --surface: #f9fafb;
+  --text: #111111;
+  --muted: #555555;
+  --dim: #888888;
+  --border: rgba(0, 0, 0, 0.09);
+  --code-bg: #f1f5f9;
+  --code-text: #1e293b;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --text: #ededed;
+  --muted: #888888;
+  --dim: #666666;
+  --border: rgba(255, 255, 255, 0.08);
+  --code-bg: #161616;
+  --code-text: #e2e8f0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
+
+/* Shiki code block reset */
+.shiki {
+  background-color: transparent !important;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(127,127,127,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(127,127,127,0.35); }

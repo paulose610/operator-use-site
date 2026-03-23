@@ -2,8 +2,8 @@ import Badge from "@/components/ui/Badge";
 
 const platforms = [
   { name: "Windows", support: "full" as const, note: "Full desktop control" },
-  { name: "macOS",   support: "full" as const, note: "Full desktop control" },
-  { name: "Linux",   support: "partial" as const, note: "No desktop control" },
+  { name: "macOS",   support: "partial" as const, note: "Full desktop control (Beta)" },
+  { name: "Linux",   support: "partial" as const, note: "Desktop control in progress" },
 ];
 
 export default function PlatformSupport() {

@@ -109,8 +109,8 @@ export default function PrintPage() {
             headers={["Platform", "Support", "Notes"]}
             rows={[
               ["Windows", "Full", "Full desktop control"],
-              ["macOS", "Full", "Full desktop control"],
-              ["Linux", "Partial", "No desktop control"],
+              ["macOS", "Beta", "Full desktop control (Beta)"],
+              ["Linux", "Partial", "Desktop control in progress"],
             ]}
           />
         </Section>
@@ -143,6 +143,7 @@ export default function PrintPage() {
               title: "Start",
               rows: [
                 ["operator", "Start the agent"],
+                ["operator run", "Start the agent"],
                 ["operator agent", "Chat in the terminal — no messaging channel needed"],
               ],
             },
@@ -176,6 +177,7 @@ export default function PrintPage() {
               rows: [
                 ["operator channels", "List all configured channels"],
                 ["operator channel add", "Add a new channel interactively"],
+                ["operator gateway", "Manage channels"],
                 ["operator models", "Show available models and the active LLM"],
               ],
             },

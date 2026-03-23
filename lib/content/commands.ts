@@ -16,6 +16,7 @@ export const commandCategories: CommandCategory[] = [
     title: "Start",
     rows: [
       { command: "operator", description: "Start the agent" },
+      { command: "operator run", description: "Start the agent" },
       {
         command: "operator agent",
         description: "Chat in the terminal — no messaging channel needed",
@@ -83,6 +84,10 @@ export const commandCategories: CommandCategory[] = [
       {
         command: "operator channel add",
         description: "Add a new channel interactively",
+      },
+      {
+        command: "operator gateway",
+        description: "Manage channels",
       },
       {
         command: "operator models",

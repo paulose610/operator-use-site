@@ -1,11 +1,16 @@
 "use client";
 
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
-import { navSections, allNavIds } from "@/lib/content/navigation";
+import type { NavSection } from "@/lib/content/navigation";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import clsx from "clsx";
 
-export default function Sidebar() {
+type Props = {
+  navSections: NavSection[];
+  allNavIds: string[];
+};
+
+export default function Sidebar({ navSections, allNavIds }: Props) {
   const activeId = useActiveSection(allNavIds);
 
   return (

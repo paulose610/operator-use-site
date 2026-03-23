@@ -4,10 +4,11 @@ import InstallGuide from "@/components/sections/InstallGuide";
 import CommandReference from "@/components/sections/CommandReference";
 import DockerSetup from "@/components/sections/DockerSetup";
 import ConfigLocation from "@/components/sections/ConfigLocation";
+import { navSections, allNavIds } from "@/lib/content/navigation";
 
 export default function SetupPage() {
   return (
-    <DocsLayout>
+    <DocsLayout navSections={navSections} allNavIds={allNavIds}>
       <div className="mb-10 pb-8 border-b border-[var(--border)]">
         <p className="text-xs font-semibold uppercase tracking-wider text-[#7c3aed] mb-2">
           Getting Started
